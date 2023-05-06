@@ -9,6 +9,8 @@
 
         <properties>
             <property name="hibernate.vertx.pool.connect_timeout" value="30000"/>
+            <property name="hibernate.vertx.pool.class" value="me.hajoo.jdslsample.config.MysqlConnectionPool"/>
+            <property name="hibernate.vertx.pool.configuration_class" value="me.hajoo.jdslsample.config.VertxMysqlDBConnectionPoolConfiguration"/>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/test"/>
             <property name="jakarta.persistence.jdbc.user" value="root"/>
             <property name="jakarta.persistence.jdbc.password" value="1234"/>
