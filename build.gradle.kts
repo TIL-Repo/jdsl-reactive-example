@@ -26,6 +26,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
     runtimeOnly("com.h2database:h2")
+    runtimeOnly("mysql:mysql-connector-java:8.0.33")
 
     // reactive
     // https://mvnrepository.com/artifact/org.hibernate.reactive/hibernate-reactive-core-jakarta/1.1.9.Final
@@ -37,7 +38,7 @@ dependencies {
 
     // mac os
     // https://mvnrepository.com/artifact/io.netty/netty-resolver-dns-native-macos/4.1.92.Final
-    implementation("io.netty:netty-resolver-dns-native-macos:4.1.92.Final")
+    implementation("io.netty:netty-resolver-dns-native-macos:4.1.92.Final:osx-aarch_64")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
