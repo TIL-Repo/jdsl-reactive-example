@@ -25,16 +25,18 @@ dependencies {
     implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
-    runtimeOnly("com.h2database:h2")
-    runtimeOnly("mysql:mysql-connector-java:8.0.33")
 
     // reactive
     // https://mvnrepository.com/artifact/org.hibernate.reactive/hibernate-reactive-core-jakarta/1.1.9.Final
     implementation("org.hibernate.reactive:hibernate-reactive-core-jakarta:1.1.9.Final")
     // https://mvnrepository.com/artifact/com.linecorp.kotlin-jdsl/spring-data-kotlin-jdsl-hibernate-reactive-jakarta/2.2.1.RELEASE
     implementation("com.linecorp.kotlin-jdsl:spring-data-kotlin-jdsl-hibernate-reactive-jakarta:2.2.1.RELEASE")
+
     // https://mvnrepository.com/artifact/io.vertx/vertx-mysql-client
     implementation("io.vertx:vertx-mysql-client:4.4.1")
+    implementation("mysql:mysql-connector-java:8.0.33")
+
+    implementation("io.smallrye.reactive:mutiny-kotlin:2.2.0")
 
     // mac os
     // https://mvnrepository.com/artifact/io.netty/netty-resolver-dns-native-macos/4.1.92.Final
@@ -53,4 +55,12 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+allOpen {
+    annotation("jakarta.persistence.Entity")
+}
+
+noArg {
+    annotation("jakarta.persistence.Entity")
 }
